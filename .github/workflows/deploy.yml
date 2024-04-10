@@ -13,7 +13,7 @@ jobs:
       MONGODB_USERNAME: palavecnogio
       MONGODB_PASSWORD: 83qgGTF6i2ziMNdP
       PORT: 8080
-    environment: testing
+    environment: Testing
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
@@ -30,12 +30,12 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME }}" 
+        run: echo "MONGODB_USERNAME:${{env.MONGODB_USERNAME}}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Output information
         run: |        
-          echo "MONGODB_USERNAME: ${{ env.MONGODB_USERNAME}}"
-          echo "MONGODB_USERNAME: "${{MONGODB_USERNAME}}"
+          echo "MONGODB_USERNAME:${{env.MONGODB_USERNAME}}"
+          echo "MONGODB_USERNAME:${{env.MONGODB_USERNAME}}"
